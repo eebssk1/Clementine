@@ -87,7 +87,7 @@ jobs:
       - name: tx push
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
-        run: tx push -s
+        run: tx push -s || exit 0
 
   create_release:
     name: Create GitHub Release
