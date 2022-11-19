@@ -72,6 +72,14 @@ Rainbow::RainbowAnalyzer::RainbowAnalyzer(const RainbowType& rbtype,
     band_scale_[i] =
         -std::cos(M_PI * i / (kRainbowBands - 1)) * 0.5 * std::pow(2.3, i);
   }
+
+  if (rainbowtype == Rainbow::RainbowAnalyzer::Dash) {
+    for (int i = 0; i < kRainbowBands / 2; i++) {
+      QPen tempP = colors_[i];
+      colors_[i] = colors_[kRainbowBands - i - 1];
+      colors_[kRainbowBands - i - 1] = tempP;
+    }
+  }
 }
 
 void Rainbow::RainbowAnalyzer::transform(Scope& s) { fht_->spectrum(s.data()); }
