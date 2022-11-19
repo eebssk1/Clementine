@@ -40,6 +40,7 @@
 const int VisualisationContainer::kLowFramerate = 15;
 const int VisualisationContainer::kMediumFramerate = 25;
 const int VisualisationContainer::kHighFramerate = 35;
+const int VisualisationContainer::kHigherFramerate = 48;
 const int VisualisationContainer::kSuperHighFramerate = 60;
 
 const char* VisualisationContainer::kSettingsGroup = "Visualisations";
@@ -110,6 +111,8 @@ void VisualisationContainer::Init() {
                        kMediumFramerate, fps_, fps_group);
   AddFramerateMenuItem(tr("High (%1 fps)").arg(kHighFramerate), kHighFramerate,
                        fps_, fps_group);
+  AddFramerateMenuItem(tr("Higher (%1 fps)").arg(kHigherFramerate),
+                       kHigherFramerate, fps_, fps_group);
   AddFramerateMenuItem(tr("Super high (%1 fps)").arg(kSuperHighFramerate),
                        kSuperHighFramerate, fps_, fps_group);
   fps_menu->addActions(fps_group->actions());

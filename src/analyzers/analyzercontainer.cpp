@@ -43,6 +43,7 @@ const char* AnalyzerContainer::kSettingsFramerate = "framerate";
 const int AnalyzerContainer::kLowFramerate = 20;
 const int AnalyzerContainer::kMediumFramerate = 25;
 const int AnalyzerContainer::kHighFramerate = 30;
+const int AnalyzerContainer::kHigherFramerate = 48;
 const int AnalyzerContainer::kSuperHighFramerate = 60;
 
 AnalyzerContainer::AnalyzerContainer(QWidget* parent)
@@ -66,6 +67,7 @@ AnalyzerContainer::AnalyzerContainer(QWidget* parent)
   AddFramerate(tr("Low (%1 fps)").arg(kLowFramerate), kLowFramerate);
   AddFramerate(tr("Medium (%1 fps)").arg(kMediumFramerate), kMediumFramerate);
   AddFramerate(tr("High (%1 fps)").arg(kHighFramerate), kHighFramerate);
+  AddFramerate(tr("Higher (%1 fps)").arg(kHigherFramerate), kHigherFramerate);
   AddFramerate(tr("Super high (%1 fps)").arg(kSuperHighFramerate),
                kSuperHighFramerate);
 
